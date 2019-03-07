@@ -1,0 +1,223 @@
+html, body{
+    margin:0;
+    padding:0;
+    height: 100%;
+    background-color: skyblue;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;    
+   
+    padding: 2rem 1rem;
+
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 2rem 5rem;
+    }
+}
+
+#title {
+    font-weight: 400;
+    text-align: center;
+    font-size: 2.5rem;
+
+}
+#title::after{
+    height: .2rem;
+    width: 15rem;
+    background-color: #181715;
+    content: '';
+    display: block;
+    margin: .3rem auto 0 auto;
+}
+
+.container .mydescription {
+    text-align: center;
+    font-weight: 200;
+    font-size: 1.4rem;
+    margin: 1.5rem 0 3rem 0;
+    border: dashed;
+}
+@media (min-width:768px) {
+    .container .mydescription {
+        border: unset;
+    }
+}
+
+
+.formulario {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+}
+
+/*remove borders of inputs*/
+input {
+    border: none;
+}
+
+.input-fields {
+    margin-top: 1rem;
+}
+
+/*only for border-bottom*/
+.input-line {
+    background: none;
+    line-height: 2.4rem;
+    font-family: roboto, serif;
+    font-weight: 300;
+    font-size: 1rem;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.65);
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+}
+
+.formulario .input-fields {
+    margin-bottom: 1rem; 
+    flex: 0 0 100%;
+    display: flex;
+    flex-wrap: no-wrap;/*to make position of input next of label*/
+    align-items: flex-start; 
+}
+
+@media only screen and (min-width: 768px) {
+    .formulario .input-fields { /*in pc screen some fields get 50%-1rem of space*/
+        flex: 0 0 calc(50% - 1rem); 
+    } 
+}
+
+/*all others labels without class expandr*/
+.formulario .input-fields label {
+    flex: 0 0 15%; 
+    font-weight: 300;
+    font-size: 1.1rem;
+}
+
+.formulario .input-fields .personal-data {
+    display: none;
+}
+
+/*all others input fields without class expand*/
+.formulario .input-fields input[type="text"], .formulario .input-fields input[type="email"], 
+.formulario .input-fields input[type="number"]{
+    flex: 1 0 100%; 
+}
+
+@media(min-width: 768px){
+    /*all others input fields without class expand*/
+    .formulario .input-fields .personal-data {
+        display: unset;
+    }
+    .formulario .input-fields input[type="text"], .formulario .input-fields input[type="email"], 
+    .formulario .input-fields input[type="number"]{
+        flex: 1 0 85%; 
+    }
+
+}
+
+.formulario .question {
+    font-weight: 300;
+    font-size: 1.1rem;
+    margin-bottom: .3rem; 
+}
+
+.formulario .input-fields.expand {
+    display: flex;
+    flex-direction: column;   
+    flex: 0 0 calc(100%);
+}
+
+@media (min-width:768px) {
+    .formulario .input-fields.expand {
+        flex-direction: row;   
+    }
+}
+
+.formulario .input-fields.expand textarea {
+    flex: 1;
+}
+
+/*flex inside options class to display in row all the options */
+.formulario .input-fields .options {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1; 
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 4rem;
+}
+
+@media (min-width:768px) {
+    .formulario .input-fields .options {
+        flex-direction: row;
+    }
+}
+
+
+/*.formulario .expand .options label {  
+    flex: 0 0 15%;
+}*/
+
+.formulario textarea {
+    margin-left: 0;
+}
+
+@media (min-width:768px) {
+    .formulario textarea {
+        margin-left: 1rem;
+    }
+}
+
+/*dropdown*/
+
+select {
+    width: 15rem;
+    padding: 0rem 1rem;
+    font-size: .9rem;
+    line-height: 2;
+    border-radius: .8rem;
+    height: 2rem;
+    background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right #ddd;
+    -webkit-appearance: none;
+    background-position-x: 13rem;
+    font-weight: 300;
+    margin: 1rem 0 0 1rem;
+}
+
+select option {
+    font-size: .9rem;
+    font-weight: 300;
+}
+
+/*send button*/
+.formulario .input-fields.send {
+    display: flex;  
+    justify-content: flex-end; 
+    align-items: flex-end;/*en movil lo he convertido a flex-row por eso uso align-items*/
+}
+
+.formulario .input-fields.send .button {
+    background-color: #005b9f;
+    padding: .5rem 1rem;
+    display: block;
+    text-align: center;
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: background-color .3s ease; 
+    border-radius: .8rem;
+}
+
+.formulario .input-fields.send .button:hover {
+    cursor: pointer;
+    background-color: #003e6c; 
+}
+
+
+
